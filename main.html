@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/gotham">
+</head>
+<body>
+  <div id="container">
+    <div class="conteudo" id="primeiro-conteudo">
+      <form id="cadastrar">
+        <h1>Cadastrar Café da Manhã</h1>
+        <div id="formulario">
+          <input type="text" class="marge" id="nome" placeholder="Nome">
+          <input type="number" class="marge" id="cpf" placeholder="CPF">
+          <input type="text" class="marge" id="mesa" placeholder="Mesa café da manha">
+          <button type="button" class="marge" id="cad-button" value="Cadastrar" onclick="criar()">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+    <div class="conteudo" id="segundo-conteudo">
+      <div id="exibe-lista">
+        <div id="box-lista">
+          <div id="lista">
+            <table border="1" id="tabela-breakfast">
+              <thead id="cabecalho">
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Mesa Café da Manhã</th>
+                <th>Ações</th>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <script type="text/javascript" src="main.js"></script>
+  </footer>
+</body>
+</html>

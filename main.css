@@ -1,0 +1,130 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body, html{
+  height: 100%;
+
+  font-family: "Gotham";
+}
+
+#container{
+  display: flex;
+  height: 100%;
+}
+
+.conteudo{
+  width: 50%;
+}
+
+.conteudo h1{
+  margin-bottom: 56px;
+  color: #508ab7;
+  font-size: 27px;
+}
+
+#cadastrar{
+  background-color: #a6def7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#formulario{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.52);
+}
+.marge{
+  padding: 10px;
+  margin: 10px;
+  width: 270px;
+}
+
+#cad-button{
+  width: 100px;
+}
+
+#exibe-lista{
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#segundo-conteudo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #80a9c9;
+}
+
+.listBreakfast td {
+  list-style-type: none;
+  padding: 8px;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+  table-layout: fixed;
+}
+.listBreakfast td, .listBreakfast tr {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#lista th {
+  border: 1px solid #ddd;
+  background-color: #eeeeef;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+#box-lista{
+  margin: 50px 0 0 10px;
+  overflow: scroll;
+  height: 85%;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.input-att {
+  max-width: 90%;
+  padding: 5px;
+  font-family: "Gotham";
+}
+
+img{
+  width: 20px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@import url('http://fonts.cdnfonts.com/css/gotham');
