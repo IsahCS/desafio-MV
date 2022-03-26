@@ -1,0 +1,25 @@
+{
+  "name": "desafio-mv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 3333\" \"sleepms 1000 && open http://localhost:3333/main.html\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsahCS/desafio-MV.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsahCS/desafio-MV/issues"
+  },
+  "homepage": "https://github.com/IsahCS/desafio-MV#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "http-server": "^14.1.0",
+    "sleep-ms": "^2.0.1"
+  }
+}

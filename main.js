@@ -3,7 +3,12 @@ const table = document.querySelector("#tabela-breakfast");
 const initialTable = document.querySelector("#cabecalho");
 const formulario = document.querySelector("#formulario");
 
-const breakfastRouteUrl = (route = "") => `${urlApi}${route}`; 
+const breakfastRouteUrl = (route = "") => `${urlApi}${route}`;
+
+document.querySelector('#cpf').addEventListener('input', function (e) {
+  const x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2})/);
+  e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '-' + x[4] + (x[5] ? '-' + x[5] : '');
+});
 
 const headers = {
   'Accept': 'application/json',
@@ -15,32 +20,32 @@ const fetchBreakfast = async() => {
   const breakfastList = await response.json();
  
   breakfastList.forEach((breakfast, index) => { 
+    
     table.innerHTML +=  `
       <tr class="listBreakfast" id="listBreakfast-${index}">
-        <td id="nome">
+      <td id="nome">
           <input class="input-att" id="input-nome-${breakfast.id}" value=${breakfast.nome}>
-        </td>
-        <td id="cpf">
-          <input class="input-att" id="input-cpf-${breakfast.id}" value=${breakfast.cpf}>
+          </td>
+          <td id="cpf">
+        <input class="input-att" id="input-cpf-${breakfast.id}" value=${breakfast.cpf}>
         </td>
         <td id="mesa">
-          <input class="input-att" id="input-mesa-${breakfast.id}" value=${breakfast.mesa}>
+        <input class="input-att" id="input-mesa-${breakfast.id}" value=${breakfast.mesa}>
         </td>
         <td>
-          <img src="./trash-can.png" id="${index}" onclick="deletar(${breakfast.id})" title="Excluir">
-          <img src="./system-update.png" id="${index}" onclick="atualizar(${breakfast.id})" title="Atualizar"> 
-        </td>
-      </tr>`
-  }); 
-};
+        <img src="./img/trash-can.png" id="${index}" onclick="deletar(${breakfast.id})" title="Excluir">
+          <img src="./img/system-update.png" id="${index}" onclick="atualizar(${breakfast.id})" title="Atualizar"> 
+          </td>
+          </tr>`
+  });
+}
 
 const renderizaForm = () => {
   formulario.innerHTML = `
     <input type="text" class="marge" id="nome" placeholder="Nome">
     <input type="number" class="marge" id="cpf" placeholder="CPF">
     <input type="text" class="marge" id="mesa" placeholder="Mesa café da manha">
-    <button type="button" class="marge" id="cad-button" value="Cadastrar" onclick="criar()">Cadastrar</button>
-    `
+    <button type="button" class="marge" id="cad-button" value="Cadastrar" onclick="criar()">Cadastrar</button>`;
 };
 
 const criar = async () => {
