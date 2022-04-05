@@ -1,8 +1,8 @@
-const urlApi = `http://localhost:8080/api/breakfast/`;
+const urlApi = API_URL;
 const table = document.querySelector("#tabela-breakfast");
 const initialTable = document.querySelector("#cabecalho");
 const formulario = document.querySelector("#formulario");
-
+console.log(urlApi)
 const breakfastRouteUrl = (route = "") => `${urlApi}${route}`;
 
 document.querySelector('#cpf').addEventListener('input', function (e) {
@@ -55,7 +55,7 @@ const criar = async () => {
     mesa: document.querySelector("#mesa").value
   };
 
-  if(infos.cpf.length < 11 || infos.cpf.length > 11){
+  if(infos.cpf.length < 11){
     alert("CPF deve conter 11 digitos, ex: 12345678900")
     return false;
   };
